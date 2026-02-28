@@ -7,16 +7,6 @@ Rules-Requires-Root: no
 Build-Depends: debhelper-compat (= 13), cmake, git
 Homepage: https://github.com/quic/quic-teec
 
-Package: qcom-libqcomtee
-Architecture: arm64
-Section: libs
-Description:
- QCOM‑TEE (libqcomtee) is a user-space C library that enables applications to communicate
- with Qualcomm’s Trusted Execution Environment (QTEE) via the Linux TEE subsystem using object-based IPC.
- .
- This package consists of library libqcomtee to communicate with qcomtee kernel driver.
-Depends: ${misc:Depends}, ${shlibs:Depends}
-
 Package: qcom-libqcomtee-dev
 Architecture: arm64
 Section: libdevel
@@ -24,6 +14,6 @@ Description:
  QCOM‑TEE (libqcomtee) is a user-space C library that enables applications to communicate
  with Qualcomm’s Trusted Execution Environment (QTEE) via the Linux TEE subsystem using object-based IPC.
  .
- This package contains library headers for the shared libraries shipped in the
- qcom-libqcomtee package.
-Depends: qcom-libqcomtee (= ${binary:Version}), ${misc:Depends}
+ This package contains the static library libqcomtee.a and the development
+ headers used to build applications against qcomtee.
+Depends: ${misc:Depends}
