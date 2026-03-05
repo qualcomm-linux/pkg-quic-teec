@@ -1,5 +1,9 @@
 qcom-qcomtee (1.0.0-1) UNRELEASED; urgency=medium
 
+  [ Abhinaba Rakshit ]
   * Initial packaging.
 
- -- Abhinaba Rakshit <abhinaba.rakshit@oss.qualcomm.com>  Wed, 14 Jan 2026 14:30:00 +0530
+  [ GitHub Service Bot ]
+  * New upstream release
+
+ -- GitHub Service Bot <githubservice@qti.qualcomm.com>  Thu, 05 Mar 2026 09:05:36 +0000
