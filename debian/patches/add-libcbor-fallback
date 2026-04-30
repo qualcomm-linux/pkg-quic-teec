@@ -24,7 +24,7 @@ Description: libqcomtee: add libcbor fallback for CBOR support
  compatibility.
 Author: Abhinaba Rakshit <abhinaba.rakshit@oss.qualcomm.com>
 Origin: upstream, https://github.com/quic/quic-teec/pull/23
-Last-Update: 2026-04-30 <YYYY-MM-DD, last update of the meta-information, optional>
+Last-Update: 2026-04-30
 ---
 This patch header follows DEP-3: http://dep.debian.net/deps/dep3/
 Index: pkg-quic-teec/libqcomtee/CMakeLists.txt
