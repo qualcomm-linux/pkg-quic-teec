@@ -1,8 +1,9 @@
-qcom-qcomtee (1.0.0-3) UNRELEASED; urgency=medium
+qcom-qcomtee (1.0.0-3) unstable; urgency=medium
 
+  [ Abhinaba Rakshit ]
   * Initial commit
 
- -- Abhinaba Rakshit <abhinaba.rakshit@oss.qualcomm.com>  Mon, 04 May 2026 08:50:15 +0000
+ -- GitHub Service Bot <githubservice@qti.qualcomm.com>  Thu, 07 May 2026 23:27:22 +0000
 
 qcom-qcomtee (1.0.0-2) unstable; urgency=medium
 
