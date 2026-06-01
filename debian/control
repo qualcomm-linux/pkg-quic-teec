@@ -6,11 +6,13 @@ Priority: optional
 Rules-Requires-Root: no
 Build-Depends: debhelper-compat (= 13), cmake, libcbor-dev
 Homepage: https://github.com/quic/quic-teec
+Vcs-Git: https://github.com/qualcomm-linux/pkg-quic-teec -b debian/qcom-next
+Vcs-Browser: https://github.com/qualcomm-linux/pkg-quic-teec
 
 Package: qcom-libqcomtee-dev
 Architecture: arm64
 Section: libdevel
-Description:
+Description: Qualcomm qcomtee userspace library
  QCOM‑TEE (libqcomtee) is a user-space C library that enables applications to communicate
  with Qualcomm’s Trusted Execution Environment (QTEE) via the Linux TEE subsystem using object-based IPC.
  .
