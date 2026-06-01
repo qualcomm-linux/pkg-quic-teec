@@ -1,7 +1,9 @@
 qcom-qcomtee (1.0.1-1) UNRELEASED; urgency=medium
 
   [ Abhinaba Rakshit ]
-  * WIP — update changelog before next release
+  * New upstream release
+  * d/p/add-libcbor-fallback: drop (fixed upstream).
+  * d/control: add Vcs-Git and Vcs-Browser.
 
   [ GitHub Service Bot ]
   * New upstream release
