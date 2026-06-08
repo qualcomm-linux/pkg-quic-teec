@@ -1,4 +1,4 @@
-quic-teec (1.0.1-1) UNRELEASED; urgency=medium
+quic-teec (1.0.1-1) resolute; urgency=medium
 
   [ Abhinaba Rakshit ]
   * Update source package nema to quic-teec
@@ -7,4 +7,4 @@ quic-teec (1.0.1-1) UNRELEASED; urgency=medium
   [ GitHub Service Bot ]
   * New upstream release
 
- -- GitHub Service Bot <githubservice@qti.qualcomm.com>  Mon, 01 Jun 2026 21:06:28 +0000
+ -- GitHub Service Bot <githubservice@qti.qualcomm.com>  Mon, 08 Jun 2026 10:59:22 +0000
