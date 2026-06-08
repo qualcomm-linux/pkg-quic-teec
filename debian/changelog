@@ -1,7 +1,8 @@
 quic-teec (1.0.1-1) UNRELEASED; urgency=medium
 
   [ Abhinaba Rakshit ]
-  * WIP — update changelog before next release
+  * Update source package nema to quic-teec
+  * Update binary package name to libqcomtee-dev
 
   [ GitHub Service Bot ]
   * New upstream release
