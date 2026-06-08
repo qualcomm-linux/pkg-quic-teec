@@ -1,4 +1,4 @@
-Source: qcom-qcomtee
+Source: quic-teec
 Maintainer: Abhinaba Rakshit <abhinaba.rakshit@oss.qualcomm.com>
 Standards-Version: 4.6.2
 Section: misc
@@ -9,7 +9,7 @@ Homepage: https://github.com/quic/quic-teec
 Vcs-Git: https://github.com/qualcomm-linux/pkg-quic-teec -b debian/qcom-next
 Vcs-Browser: https://github.com/qualcomm-linux/pkg-quic-teec
 
-Package: qcom-libqcomtee-dev
+Package: libqcomtee-dev
 Architecture: arm64
 Section: libdevel
 Description: Qualcomm qcomtee userspace library
