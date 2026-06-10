@@ -18,4 +18,4 @@ Description: Qualcomm qcomtee userspace library
  .
  This package contains the static library libqcomtee.a and the development
  headers used to build applications against qcomtee.
-Depends: ${misc:Depends}
+Depends: libcbor-dev, ${misc:Depends}
