@@ -1,7 +1,7 @@
 quic-teec (1.0.1-1) UNRELEASED; urgency=medium
 
   [ Abhinaba Rakshit ]
-  * Initial Debian release with upstream 1.0.1
+  * Initial Debian release with upstream v1.0.1
   * Package libqcomtee-dev: libqcomtee static library to interface QTEE
 
  -- Abhinaba Rakshit <abhinaba.rakshit@oss.qualcomm.com>  Mon, 01 Jun 2026 21:06:28 +0000
