@@ -6,7 +6,7 @@ Priority: optional
 Rules-Requires-Root: no
 Build-Depends: debhelper-compat (= 13), cmake, libcbor-dev
 Homepage: https://github.com/quic/quic-teec
-Vcs-Git: https://github.com/qualcomm-linux/pkg-quic-teec -b debian/qcom-next
+Vcs-Git: https://github.com/qualcomm-linux/pkg-quic-teec -b qcom/debian/latest
 Vcs-Browser: https://github.com/qualcomm-linux/pkg-quic-teec
 
 Package: libqcomtee-dev
