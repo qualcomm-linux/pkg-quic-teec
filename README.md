@@ -14,7 +14,7 @@ Upstream project is hosted here : https://github.com/quic/quic-teec
 
 ## Installation Instructions
 ```
-sudo dpkg -i qcom-libqcomtee-dev_x.deb
+sudo dpkg -i libqcomtee-dev_x_arm64.deb
 ```
 ## Usage
 
