@@ -1,7 +1,7 @@
-quic-teec (1.0.1-0qli+staging1) UNRELEASED; urgency=medium
+quic-teec (1.0.1-0qli+staging1) forky; urgency=medium
 
   [ Abhinaba Rakshit ]
   * Initial Debian release with upstream v1.0.1
   * Package libqcomtee-dev: libqcomtee static library to interface QTEE
 
- -- GitHub Service Bot <githubservice@qti.qualcomm.com>  Mon, 01 Jun 2026 21:06:28 +0000
+ -- root <root@42cf8c255e62>  Mon, 29 Jun 2026 09:19:08 +0000
