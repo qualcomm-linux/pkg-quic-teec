@@ -9,7 +9,7 @@ Build-Depends:
  cmake,
  libcbor-dev,
 Homepage: https://github.com/quic/quic-teec
-Vcs-Git: https://github.com/qualcomm-linux/pkg-quic-teec -b qcom/debian/latest
+Vcs-Git: https://github.com/qualcomm-linux/pkg-quic-teec.git
 Vcs-Browser: https://github.com/qualcomm-linux/pkg-quic-teec
 
 Package: libqcomtee-dev
