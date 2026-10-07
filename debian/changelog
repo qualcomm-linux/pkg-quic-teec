@@ -1,9 +1,10 @@
-quic-teec (1.0.1-0qli1~bpo13+1~) UNRELEASED; urgency=medium
+quic-teec (1.0.1-0qli1~bpo13+1) trixie; urgency=medium
 
+  [ Lukas Märdian ]
   * Rebuild for trixie.
   * d/gbp.conf: Update for QLI.
 
- -- Lukas Märdian <lukas.maerdian@oss.qualcomm.com>  Wed, 07 Oct 2026 15:52:52 +0200
+ -- Debusine Action Bot <noreply@bot.invalid>  Wed, 07 Oct 2026 13:54:54 +0000
 
 quic-teec (1.0.1-0qli1) forky; urgency=medium
 
