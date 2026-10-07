@@ -1,8 +1,9 @@
-quic-teec (1.0.1-0qli+staging3~) UNRELEASED; urgency=medium
+quic-teec (1.0.1-0qli1~) UNRELEASED; urgency=medium
 
-  * Unreleased changes
+  * Rebuild for QLI.
+  * d/gbp.conf: Update for QLI.
 
- -- Debusine Action Bot <noreply@bot.invalid>  Wed, 07 Oct 2026 13:10:53 +0000
+ -- Lukas Märdian <lukas.maerdian@oss.qualcomm.com>  Wed, 07 Oct 2026 15:36:26 +0200
 
 quic-teec (1.0.1-0qli+staging2) forky; urgency=medium
 
