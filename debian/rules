@@ -5,11 +5,32 @@ export DEB_BUILD_MAINT_OPTIONS = hardening=+all
 %:
 	dh $@ --buildsystem=cmake
 
+# Always use libcbor; don't switch backends if a QCBOR build happens to be installed.
+CONFIGURE_FLAGS = -DCMAKE_DISABLE_FIND_PACKAGE_QCBOR=ON
+
+# Upstream builds either a static or a shared library, so build twice.
+# The shared build also provides the tests, linked against libqcomtee.so.
 override_dh_auto_configure:
-	# Always use libcbor; don't switch backends if a QCBOR build happens to be installed.
-	dh_auto_configure -- \
-		-DBUILD_UNITTEST=ON \
-		-DCMAKE_DISABLE_FIND_PACKAGE_QCBOR=ON
+	dh_auto_configure --builddirectory=build-static -- \
+		$(CONFIGURE_FLAGS) -DBUILD_SHARED_LIBS=OFF -DBUILD_UNITTEST=OFF
+	dh_auto_configure --builddirectory=build-shared -- \
+		$(CONFIGURE_FLAGS) -DBUILD_SHARED_LIBS=ON -DBUILD_UNITTEST=ON
+
+override_dh_auto_build:
+	dh_auto_build --builddirectory=build-static
+	dh_auto_build --builddirectory=build-shared
+
+override_dh_auto_test:
+	dh_auto_test --builddirectory=build-static
+	dh_auto_test --builddirectory=build-shared
+
+override_dh_auto_install:
+	dh_auto_install --builddirectory=build-static
+	dh_auto_install --builddirectory=build-shared
+
+override_dh_auto_clean:
+	dh_auto_clean --builddirectory=build-static
+	dh_auto_clean --builddirectory=build-shared
 
 override_dh_strip:
 	# The .mbn file is a signed QTEE payload; stripping would invalidate it.

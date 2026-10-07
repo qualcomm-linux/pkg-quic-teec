@@ -1,3 +1,4 @@
 usr/include
 usr/lib/*/libqcomtee.a
+usr/lib/*/libqcomtee.so
 usr/lib/*/pkgconfig

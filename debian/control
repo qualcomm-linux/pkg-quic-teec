@@ -12,18 +12,34 @@ Homepage: https://github.com/qualcomm/quic-teec
 Vcs-Git: https://github.com/qualcomm-linux/pkg-quic-teec.git
 Vcs-Browser: https://github.com/qualcomm-linux/pkg-quic-teec
 
+Package: libqcomtee0
+Architecture: arm64
+Multi-Arch: same
+Section: non-free/libs
+Description: Qualcomm qcomtee userspace library - shared library
+ QCOM-TEE (libqcomtee) is a user-space C library that enables applications
+ to communicate with Qualcomm's Trusted Execution Environment (QTEE) via the
+ Linux TEE subsystem using object-based IPC.
+ .
+ This package contains the shared library.
+Depends:
+ ${misc:Depends},
+ ${shlibs:Depends},
+
 Package: libqcomtee-dev
 Architecture: arm64
+Multi-Arch: same
 Section: non-free/libdevel
 Description: Qualcomm qcomtee userspace library
  QCOM-TEE (libqcomtee) is a user-space C library that enables applications
  to communicate with Qualcomm's Trusted Execution Environment (QTEE) via the
  Linux TEE subsystem using object-based IPC.
  .
- This package contains the static library libqcomtee.a and the development
- headers used to build applications against qcomtee.
+ This package contains the development headers, the pkg-config file and the
+ shared and static libraries used to build applications against qcomtee.
 Depends:
  libcbor-dev,
+ libqcomtee0 (= ${binary:Version}),
  ${misc:Depends},
 
 Package: qcomtee-tests
