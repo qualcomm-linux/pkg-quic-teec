@@ -8,7 +8,7 @@ Build-Depends:
  debhelper-compat (= 13),
  cmake,
  libcbor-dev,
-Homepage: https://github.com/quic/quic-teec
+Homepage: https://github.com/qualcomm/quic-teec
 Vcs-Git: https://github.com/qualcomm-linux/pkg-quic-teec.git
 Vcs-Browser: https://github.com/qualcomm-linux/pkg-quic-teec
 
