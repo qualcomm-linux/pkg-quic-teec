@@ -1,0 +1,2 @@
+# No manpage for the test binary
+qcomtee-tests: no-manual-page [usr/bin/qcomteetest]

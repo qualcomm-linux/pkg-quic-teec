@@ -1,0 +1,2 @@
+usr/bin/qcomteetest
+tests/ta/smcinvoke_skeleton_ta/smcinvoke_skeleton_ta64.mbn usr/lib/qcomtee-tests/

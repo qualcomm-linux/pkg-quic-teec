@@ -4,3 +4,17 @@ export DEB_BUILD_MAINT_OPTIONS = hardening=+all
 
 %:
 	dh $@ --buildsystem=cmake
+
+override_dh_auto_configure:
+	dh_auto_configure -- -DBUILD_UNITTEST=ON
+
+override_dh_strip:
+	# The .mbn file is a signed QTEE payload; stripping would invalidate it.
+	dh_strip -X.mbn
+
+override_dh_dwz:
+	dh_dwz -X.mbn
+
+override_dh_shlibdeps:
+	# QTEE resolves the TA's dependencies in the secure world, not via dpkg-shlibdeps.
+	dh_shlibdeps -X.mbn
