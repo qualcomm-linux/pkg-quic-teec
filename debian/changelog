@@ -1,8 +1,31 @@
 quic-teec (1.0.1-0qli+staging2~) UNRELEASED; urgency=medium
 
-  * Unreleased changes
+  * d/control: Wrap-and-sort.
+  * d/control: Add myself as an uploader.
+  * d/control: Drop implicit fields.
+  * d/control: Adopt Vcs-Git.
+  * d/watch: Initial watch file.
+  * d/rules: Enable hardening flags.
+  * d/libqcomtee-dev.install: List files explicitly.
+  * d/rules: Build and ship tests in a new qcomtee-tests package.
+    - d/p/tests-install-qcomteetest.patch
+  * d/control: Improve description length.
+  * d/copyright: Initial DEP-5 data.
+  * d/{control,copyright}: Mark as non-free, due to pre-built .mbn file.
+    - Also ignore warnings in d/s/lintian-overrides
+  * d/docs: Drop additional LICENSE.txt in favour of d/copyright.
+  * d/gbp.conf: Add debian-tag.
+  * d/upstream: Add metadata.
+  * d/control: Update homepage.
+  * Fix pkg-config meta-data.
+    - d/p/pr30-1-pkgconfig-honor-GNUInstallDirs.patch
+  * d/rules: Prefer libcbor over QCBOR.
+    - d/p/pr30-2-define-USE_QCBOR-with-target_compile_definitions.patch
+    - d/p/pr30-3-pkgconfig-report-CBOR-backend-in-Requires-private.patch
+    - d/p/pr30-4-drop-REQUIRED-from-find_package-QCBOR.patch
+  * d/{control,rules}: Introduce the libqcomtee0 shared library.
 
- -- Debusine Action Bot <noreply@bot.invalid>  Mon, 29 Jun 2026 09:21:13 +0000
+ -- Lukas Märdian <lukas.maerdian@oss.qualcomm.com>  Wed, 07 Oct 2026 14:53:53 +0200
 
 quic-teec (1.0.1-0qli+staging1) forky; urgency=medium
 
