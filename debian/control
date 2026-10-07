@@ -16,8 +16,9 @@ Package: libqcomtee-dev
 Architecture: arm64
 Section: libdevel
 Description: Qualcomm qcomtee userspace library
- QCOM‑TEE (libqcomtee) is a user-space C library that enables applications to communicate
- with Qualcomm’s Trusted Execution Environment (QTEE) via the Linux TEE subsystem using object-based IPC.
+ QCOM-TEE (libqcomtee) is a user-space C library that enables applications
+ to communicate with Qualcomm's Trusted Execution Environment (QTEE) via the
+ Linux TEE subsystem using object-based IPC.
  .
  This package contains the static library libqcomtee.a and the development
  headers used to build applications against qcomtee.
