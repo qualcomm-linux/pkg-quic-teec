@@ -1,0 +1,22 @@
+From: Lukas Märdian <lukas.maerdian@oss.qualcomm.com>
+Date: Wed, 7 Oct 2026 11:45:00 +0200
+Subject: tests: Install the qcomteetest binary
+
+Add an install rule for the test binary, so it can be shipped when
+BUILD_UNITTEST is enabled.
+
+Forwarded: not-needed
+---
+ tests/CMakeLists.txt | 4 ++++
+ 1 file changed, 4 insertions(+)
+
+--- a/tests/CMakeLists.txt
++++ b/tests/CMakeLists.txt
+@@ -30,3 +30,7 @@ target_link_libraries(${PROJECT_NAME}
+ 	PRIVATE qcomtee
+ 	PRIVATE ${CMAKE_THREAD_LIBS_INIT}
+ )
++
++# ''Install targets''.
++
++install(TARGETS ${PROJECT_NAME} RUNTIME DESTINATION "${CMAKE_INSTALL_BINDIR}")

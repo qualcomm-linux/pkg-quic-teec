@@ -1,0 +1,12 @@
+libqcomtee.so.0 libqcomtee0 #MINVER#
+* Build-Depends-Package: libqcomtee-dev
+ qcomtee_memory_object_addr@Base 1.0.1
+ qcomtee_memory_object_alloc@Base 1.0.1
+ qcomtee_memory_object_release@Base 1.0.1
+ qcomtee_memory_object_size@Base 1.0.1
+ qcomtee_object_cb_init@Base 1.0.1
+ qcomtee_object_credentials_init@Base 1.0.1
+ qcomtee_object_invoke@Base 1.0.1
+ qcomtee_object_process_one@Base 1.0.1
+ qcomtee_object_refs_dec@Base 1.0.1
+ qcomtee_object_root_init@Base 1.0.1

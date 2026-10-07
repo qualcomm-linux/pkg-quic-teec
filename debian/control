@@ -1,21 +1,62 @@
 Source: quic-teec
 Maintainer: Abhinaba Rakshit <abhinaba.rakshit@oss.qualcomm.com>
+Uploaders:
+ Lukas Märdian <lukas.maerdian@oss.qualcomm.com>,
 Standards-Version: 4.6.2
-Section: misc
-Priority: optional
-Rules-Requires-Root: no
-Build-Depends: debhelper-compat (= 13), cmake, libcbor-dev
-Homepage: https://github.com/quic/quic-teec
-Vcs-Git: https://github.com/qualcomm-linux/pkg-quic-teec -b qcom/debian/trixie
+Section: non-free/misc
+Build-Depends:
+ debhelper-compat (= 13),
+ cmake,
+ libcbor-dev,
+Homepage: https://github.com/qualcomm/quic-teec
+Vcs-Git: https://github.com/qualcomm-linux/pkg-quic-teec.git
 Vcs-Browser: https://github.com/qualcomm-linux/pkg-quic-teec
+
+Package: libqcomtee0
+Architecture: arm64
+Multi-Arch: same
+Section: non-free/libs
+Description: Qualcomm qcomtee userspace library - shared library
+ QCOM-TEE (libqcomtee) is a user-space C library that enables applications
+ to communicate with Qualcomm's Trusted Execution Environment (QTEE) via the
+ Linux TEE subsystem using object-based IPC.
+ .
+ This package contains the shared library.
+Depends:
+ ${misc:Depends},
+ ${shlibs:Depends},
 
 Package: libqcomtee-dev
 Architecture: arm64
-Section: libdevel
+Multi-Arch: same
+Section: non-free/libdevel
 Description: Qualcomm qcomtee userspace library
- QCOM‑TEE (libqcomtee) is a user-space C library that enables applications to communicate
- with Qualcomm’s Trusted Execution Environment (QTEE) via the Linux TEE subsystem using object-based IPC.
+ QCOM-TEE (libqcomtee) is a user-space C library that enables applications
+ to communicate with Qualcomm's Trusted Execution Environment (QTEE) via the
+ Linux TEE subsystem using object-based IPC.
  .
- This package contains the static library libqcomtee.a and the development
- headers used to build applications against qcomtee.
-Depends: libcbor-dev, ${misc:Depends}
+ This package contains the development headers, the pkg-config file and the
+ shared and static libraries used to build applications against qcomtee.
+Depends:
+ libcbor-dev,
+ libqcomtee0 (= ${binary:Version}),
+ ${misc:Depends},
+
+Package: qcomtee-tests
+Architecture: arm64
+Description: Qualcomm qcomtee userspace library - test utility
+ QCOM-TEE (libqcomtee) is a user-space C library that enables applications
+ to communicate with Qualcomm's Trusted Execution Environment (QTEE) via the
+ Linux TEE subsystem using object-based IPC.
+ .
+ This package contains the qcomteetest utility, which exercises libqcomtee
+ against QTEE on the target device: it prints QTEE diagnostics and can load
+ a test Trusted Application and invoke commands on it. It requires a QTEE
+ capable device exposed through the Linux TEE subsystem.
+ .
+ The test Trusted Application is installed to /usr/lib/qcomtee-tests/. It is
+ signed with Qualcomm test keys and can only be loaded on devices that accept
+ test-signed images.
+Depends:
+ ${misc:Depends},
+ ${shlibs:Depends},

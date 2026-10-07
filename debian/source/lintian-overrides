@@ -1,0 +1,3 @@
+# The upstream source intentionally distributes signed, pre-built QTEE images.
+source-contains-prebuilt-binary [tests/ta/smcinvoke_skeleton_ta/smcinvoke_skeleton_ta64.mbn]
+source-is-missing [tests/ta/smcinvoke_skeleton_ta/smcinvoke_skeleton_ta64.mbn]

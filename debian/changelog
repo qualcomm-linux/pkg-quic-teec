@@ -1,8 +1,38 @@
-quic-teec (1.0.1-0qli+staging1~bpo2~) UNRELEASED; urgency=medium
+quic-teec (1.0.1-0qli+staging2~bpo13+1~) UNRELEASED; urgency=medium
 
   * Unreleased changes
 
- -- root <root@a6a6f1211be1>  Mon, 29 Jun 2026 09:25:10 +0000
+ -- Debusine Action Bot <noreply@bot.invalid>  Mon, 29 Jun 2026 09:25:10 +0000
+
+quic-teec (1.0.1-0qli+staging2) forky; urgency=medium
+
+  [ Lukas Märdian ]
+  * d/control: Wrap-and-sort.
+  * d/control: Add myself as an uploader.
+  * d/control: Drop implicit fields.
+  * d/control: Adopt Vcs-Git.
+  * d/watch: Initial watch file.
+  * d/rules: Enable hardening flags.
+  * d/libqcomtee-dev.install: List files explicitly.
+  * d/rules: Build and ship tests in a new qcomtee-tests package.
+    - d/p/tests-install-qcomteetest.patch
+  * d/control: Improve description length.
+  * d/copyright: Initial DEP-5 data.
+  * d/{control,copyright}: Mark as non-free, due to pre-built .mbn file.
+    - Also ignore warnings in d/s/lintian-overrides
+  * d/docs: Drop additional LICENSE.txt in favour of d/copyright.
+  * d/gbp.conf: Add debian-tag.
+  * d/upstream: Add metadata.
+  * d/control: Update homepage.
+  * Fix pkg-config meta-data.
+    - d/p/pr30-1-pkgconfig-honor-GNUInstallDirs.patch
+  * d/rules: Prefer libcbor over QCBOR.
+    - d/p/pr30-2-define-USE_QCBOR-with-target_compile_definitions.patch
+    - d/p/pr30-3-pkgconfig-report-CBOR-backend-in-Requires-private.patch
+    - d/p/pr30-4-drop-REQUIRED-from-find_package-QCBOR.patch
+  * d/{control,rules}: Introduce the libqcomtee0 shared library.
+
+ -- Debusine Action Bot <noreply@bot.invalid>  Wed, 07 Oct 2026 13:07:14 +0000
 
 quic-teec (1.0.1-0qli+staging1~bpo1) trixie; urgency=medium
 
@@ -10,4 +40,12 @@ quic-teec (1.0.1-0qli+staging1~bpo1) trixie; urgency=medium
   * Initial Debian release with upstream v1.0.1
   * Package libqcomtee-dev: libqcomtee static library to interface QTEE
 
- -- root <root@fbece59a876f>  Mon, 29 Jun 2026 09:23:12 +0000
+ -- Debusine Action Bot <noreply@bot.invalid>  Mon, 29 Jun 2026 09:23:12 +0000
+
+quic-teec (1.0.1-0qli+staging1) forky; urgency=medium
+
+  [ Abhinaba Rakshit ]
+  * Initial Debian release with upstream v1.0.1
+  * Package libqcomtee-dev: libqcomtee static library to interface QTEE
+
+ -- Debusine Action Bot <noreply@bot.invalid>  Mon, 29 Jun 2026 09:19:08 +0000

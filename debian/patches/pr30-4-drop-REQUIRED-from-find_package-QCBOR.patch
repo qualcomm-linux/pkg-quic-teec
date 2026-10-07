@@ -1,0 +1,33 @@
+From: Ali Erdinc Koroglu <ali.koroglu@oss.qualcomm.com>
+Date: Fri, 14 Aug 2026 14:06:18 +0300
+Subject: build: drop REQUIRED from find_package(QCBOR)
+
+QCBOR has been optional since the libcbor fallback landed, so REQUIRED
+now states the opposite of the intent. It has no effect today only
+because cmake/FindQCBOR.cmake sets QCBOR_FOUND by hand and never calls
+find_package_handle_standard_args(), which is what would otherwise honor
+REQUIRED and abort. Should that module ever be converted to the standard
+helper, the fallback path would become unreachable
+
+Signed-off-by: Ali Erdinc Koroglu <ali.koroglu@oss.qualcomm.com>
+
+Origin: https://github.com/qualcomm/quic-teec/pull/30/commits/3bff0b4b6c203110ec6e919104f5e602945bc274
+Forwarded: https://github.com/qualcomm/quic-teec/pull/30
+Last-Update: 2026-10-07
+---
+ libqcomtee/CMakeLists.txt | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/libqcomtee/CMakeLists.txt b/libqcomtee/CMakeLists.txt
+index adaef66..4bb508d 100644
+--- a/libqcomtee/CMakeLists.txt
++++ b/libqcomtee/CMakeLists.txt
+@@ -10,7 +10,7 @@ list(APPEND CMAKE_MODULE_PATH "${CMAKE_CURRENT_SOURCE_DIR}/cmake")
+ 
+ set(QCBOR_DIR_HINT "" CACHE PATH "Hint path for QCBOR directory")
+ 
+-find_package(QCBOR REQUIRED)
++find_package(QCBOR)
+ if(NOT QCBOR_FOUND)
+ 	message(WARNING "QCBOR not found, falling back to libcbor")
+ endif()
