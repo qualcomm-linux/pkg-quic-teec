@@ -3,7 +3,7 @@ Maintainer: Abhinaba Rakshit <abhinaba.rakshit@oss.qualcomm.com>
 Uploaders:
  Lukas Märdian <lukas.maerdian@oss.qualcomm.com>,
 Standards-Version: 4.6.2
-Section: misc
+Section: non-free/misc
 Build-Depends:
  debhelper-compat (= 13),
  cmake,
@@ -14,7 +14,7 @@ Vcs-Browser: https://github.com/qualcomm-linux/pkg-quic-teec
 
 Package: libqcomtee-dev
 Architecture: arm64
-Section: libdevel
+Section: non-free/libdevel
 Description: Qualcomm qcomtee userspace library
  QCOM-TEE (libqcomtee) is a user-space C library that enables applications
  to communicate with Qualcomm's Trusted Execution Environment (QTEE) via the
