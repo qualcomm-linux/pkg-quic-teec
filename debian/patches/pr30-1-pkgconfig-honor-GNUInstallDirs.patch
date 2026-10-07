@@ -1,0 +1,39 @@
+From: Ali Erdinc Koroglu <ali.koroglu@oss.qualcomm.com>
+Date: Fri, 14 Aug 2026 13:10:49 +0300
+Subject: build: honor GNUInstallDirs in the pkg-config file
+
+qcomtee.pc.in hardcodes libdir as ${prefix}/lib, but the library itself
+is installed to ${CMAKE_INSTALL_LIBDIR}. On distributions that use a
+multiarch or 64-bit suffixed library directory, such as Fedora and
+openSUSE where CMAKE_INSTALL_LIBDIR resolves to lib64, the two disagree
+and every consumer of qcomtee.pc is handed a -L path that does not
+contain libqcomtee.so.
+
+Expand CMAKE_INSTALL_FULL_LIBDIR and CMAKE_INSTALL_FULL_INCLUDEDIR
+instead. GNUInstallDirs is already included from the top-level
+CMakeLists.txt, so both variables are available at configure time.
+
+Signed-off-by: Ali Erdinc Koroglu <ali.koroglu@oss.qualcomm.com>
+
+Origin: https://github.com/qualcomm/quic-teec/pull/30/commits/d89899dda00d53fbb45dcad67e065b672a915c45
+Forwarded: https://github.com/qualcomm/quic-teec/pull/30
+Last-Update: 2026-10-07
+---
+ libqcomtee/qcomtee.pc.in | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+diff --git a/libqcomtee/qcomtee.pc.in b/libqcomtee/qcomtee.pc.in
+index fe1eba8..396b780 100644
+--- a/libqcomtee/qcomtee.pc.in
++++ b/libqcomtee/qcomtee.pc.in
+@@ -1,7 +1,7 @@
+ prefix="@CMAKE_INSTALL_PREFIX@"
+ exec_prefix="${prefix}"
+-libdir="${prefix}/lib"
+-includedir="${prefix}/include"
++libdir="@CMAKE_INSTALL_FULL_LIBDIR@"
++includedir="@CMAKE_INSTALL_FULL_INCLUDEDIR@"
+ 
+ Name: @PROJECT_NAME@
+ Description: @CMAKE_PROJECT_DESCRIPTION@
+
