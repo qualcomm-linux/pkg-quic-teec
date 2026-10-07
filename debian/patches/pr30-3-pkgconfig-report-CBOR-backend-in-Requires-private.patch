@@ -1,0 +1,42 @@
+From: Ali Erdinc Koroglu <ali.koroglu@oss.qualcomm.com>
+Date: Fri, 14 Aug 2026 14:04:20 +0300
+Subject: build: report the CBOR backend actually used in Requires.private
+
+Commit "Enable libcbor fallback when QCBOR is unavailable" (PR #23) made
+the CBOR backend selectable at configure time, but pc_req_private stayed
+hardcoded to qcbor. A build that falls back to libcbor therefore installs
+a qcomtee.pc declaring a private dependency on a module that is not
+present, which breaks static linking and dependency generation for
+downstream consumers.
+
+Set pc_req_private from QCBOR_FOUND. The libcbor pkg-config module is
+named libcbor, not cbor.
+
+Signed-off-by: Ali Erdinc Koroglu <ali.koroglu@oss.qualcomm.com>
+
+Origin: https://github.com/qualcomm/quic-teec/pull/30/commits/07c4a35a42093af96a5352ec4786ce686f6bf42e
+Forwarded: https://github.com/qualcomm/quic-teec/pull/30
+Last-Update: 2026-10-07
+---
+ libqcomtee/CMakeLists.txt | 7 ++++++-
+ 1 file changed, 6 insertions(+), 1 deletion(-)
+
+diff --git a/libqcomtee/CMakeLists.txt b/libqcomtee/CMakeLists.txt
+index bc80a52..adaef66 100644
+--- a/libqcomtee/CMakeLists.txt
++++ b/libqcomtee/CMakeLists.txt
+@@ -29,7 +29,12 @@ add_library(qcomtee ${SRC})
+ 
+ # ''Library pkg-config file and version''.
+ 
+-set(pc_req_private qcbor)
++if(QCBOR_FOUND)
++	set(pc_req_private qcbor)
++else()
++	set(pc_req_private libcbor)
++endif()
++
+ set(libqcomteetgt qcomtee)
+ 
+ configure_file(qcomtee.pc.in qcomtee.pc @ONLY)
+

@@ -6,7 +6,10 @@ export DEB_BUILD_MAINT_OPTIONS = hardening=+all
 	dh $@ --buildsystem=cmake
 
 override_dh_auto_configure:
-	dh_auto_configure -- -DBUILD_UNITTEST=ON
+	# Always use libcbor; don't switch backends if a QCBOR build happens to be installed.
+	dh_auto_configure -- \
+		-DBUILD_UNITTEST=ON \
+		-DCMAKE_DISABLE_FIND_PACKAGE_QCBOR=ON
 
 override_dh_strip:
 	# The .mbn file is a signed QTEE payload; stripping would invalidate it.

@@ -1,2 +1,5 @@
 pr30-1-pkgconfig-honor-GNUInstallDirs.patch
+pr30-2-define-USE_QCBOR-with-target_compile_definitions.patch
+pr30-3-pkgconfig-report-CBOR-backend-in-Requires-private.patch
+pr30-4-drop-REQUIRED-from-find_package-QCBOR.patch
 tests-install-qcomteetest.patch

@@ -1,0 +1,49 @@
+From: Ali Erdinc Koroglu <ali.koroglu@oss.qualcomm.com>
+Date: Fri, 14 Aug 2026 13:54:26 +0300
+Subject: build: define USE_QCBOR with target_compile_definitions
+
+add_compile_definitions() takes no target and no scope keyword, so
+
+    add_compile_definitions(${PROJECT_NAME} PRIVATE -DUSE_QCBOR)
+
+defines three macros for the whole directory instead of one:
+
+    -Dlibqcomtee -DPRIVATE -DUSE_QCBOR
+
+Use target_compile_definitions() on the qcomtee target, next to the
+matching target_link_libraries() call.
+
+Signed-off-by: Ali Erdinc Koroglu <ali.koroglu@oss.qualcomm.com>
+
+Origin: https://github.com/qualcomm/quic-teec/pull/30/commits/a13372eaa2ce2f1991cabbf25fc1a3d320c738d7
+Forwarded: https://github.com/qualcomm/quic-teec/pull/30
+Last-Update: 2026-10-07
+---
+ libqcomtee/CMakeLists.txt | 6 ++----
+ 1 file changed, 2 insertions(+), 4 deletions(-)
+
+diff --git a/libqcomtee/CMakeLists.txt b/libqcomtee/CMakeLists.txt
+index 9edf07c..bc80a52 100644
+--- a/libqcomtee/CMakeLists.txt
++++ b/libqcomtee/CMakeLists.txt
+@@ -11,10 +11,7 @@ list(APPEND CMAKE_MODULE_PATH "${CMAKE_CURRENT_SOURCE_DIR}/cmake")
+ set(QCBOR_DIR_HINT "" CACHE PATH "Hint path for QCBOR directory")
+ 
+ find_package(QCBOR REQUIRED)
+-if(QCBOR_FOUND)
+-	add_compile_definitions(${PROJECT_NAME}
+-		PRIVATE -DUSE_QCBOR)
+-else()
++if(NOT QCBOR_FOUND)
+ 	message(WARNING "QCBOR not found, falling back to libcbor")
+ endif()
+ 
+@@ -50,6 +47,7 @@ target_include_directories(qcomtee
+ )
+ 
+ if(QCBOR_FOUND)
++	target_compile_definitions(qcomtee PRIVATE USE_QCBOR)
+ 	target_link_libraries(qcomtee PRIVATE ${QCBOR_LIBRARIES})
+ else()
+ 	target_link_libraries(qcomtee PRIVATE cbor)
+
