@@ -1,8 +1,9 @@
 quic-teec (1.0.1-0qli1~bpo13+1~) UNRELEASED; urgency=medium
 
-  * Unreleased changes
+  * Rebuild for trixie.
+  * d/gbp.conf: Update for QLI.
 
- -- Debusine Action Bot <noreply@bot.invalid>  Wed, 07 Oct 2026 13:28:41 +0000
+ -- Lukas Märdian <lukas.maerdian@oss.qualcomm.com>  Wed, 07 Oct 2026 15:52:52 +0200
 
 quic-teec (1.0.1-0qli1) forky; urgency=medium
 
